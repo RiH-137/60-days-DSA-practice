@@ -1,0 +1,29 @@
+//Constructor
+class student {
+    private String name;
+    private int age;
+
+    student(String name, int age){
+        this.name=name;
+        this.age=age;
+    }
+    public String getName(){
+        return name;
+    }
+    public int getAge(){
+        return age;
+    }
+
+}
+
+public class myText{
+    public static void main(String[] args) {
+        student con= new student("RiH", 19);
+        String name=con.getName();
+        System.out.println(name);
+
+        int age= con.getAge();
+        System.out.println(age);            //rih 19
+
+    }
+}
