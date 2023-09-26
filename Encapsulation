@@ -1,0 +1,191 @@
+//encapsulation
+
+//generally
+class student{
+    int age;
+    String name;
+
+    public void show(){
+        System.out.println(age+ " "+ name);
+    }
+}
+
+public class myText{
+    public static void main(String[] args) {
+        student obj= new student();
+        obj.show();
+    }
+}
+
+
+//also....
+class student{
+    int age;
+    String name="rishi";
+
+    public void show(){
+        System.out.println("I .... I am "+name+" "+ age);                  //ranjan
+    }
+}
+
+public class myText{
+    public static void main(String[] args) {
+        student obj= new student();
+        obj.age=19;
+        obj.name="ranjan";
+        obj.show();
+    }
+}
+
+
+
+
+
+
+//with private
+class student{
+    private int age;
+    private String name;
+
+    public void setData(){
+        age=18;
+        name="wick";
+    }
+
+    public void show(){
+        System.out.println(name+" "+age);
+    }
+}
+public class myText{
+    public static void main(String[] args) {
+        student obj= new student();
+        obj.setData();
+        obj.show();
+    }
+}
+
+
+
+
+
+
+
+
+
+//Shadow Problem
+class student{
+    private int age;
+    private String name;
+
+    public void setData1(int a){
+        age=a;
+
+    }
+
+    public void setData2(){
+        name="Name";
+    }
+
+    public void show(){
+        System.out.println(age+" "+name);
+    }
+}
+public class myText{
+    public static void main(String[] args) {
+        student obj1= new student();
+        //student obj2=new student();
+
+        obj1.setData1(18);
+        obj1.setData2();
+        obj1.show();                                //18 Name
+
+    }
+}
+
+
+
+//Note:= We can solve shadow problem by using "this" keyword
+class student{
+    private int age;
+    private String name;
+
+    public void setAge(int a){
+        this.age=a;
+
+    }
+    public int getAge(){
+        return age;
+    }
+
+    public void setName(){
+        this.name="RiH";
+    }
+    public String getName(){
+        return name;
+    }
+
+    public void show(){
+        System.out.println(age+" "+name);
+    }
+}
+public class myText{
+    public static void main(String[] args) {
+        student obj1= new student();
+        //student obj2=new student();
+
+        obj1.getAge();
+        obj1.getName();
+        obj1.show();                                //0 null
+
+    }
+}
+
+
+
+
+
+
+
+
+
+// setter/getter
+class student{
+    private int age;
+    private String name;
+
+
+    public void setAge(int age){
+        this.age=age;
+    }
+    public int getAge(){
+        return age;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public String getName(){
+        return name;
+    }
+    public void show(){
+        System.out.println(age+" "+name);
+    }
+}
+public class myText{
+    public static void main(String[] args) {
+        student obj1= new student();
+        student obj2= new student();
+
+        obj1.setAge(18);
+        obj2.setAge(25);
+
+        obj1.setName("rih");
+        obj2.setName("ana");
+
+        int stud1Age= obj1.getAge();
+        String stud1Name=obj1.getName();
+        System.out.println(stud1Age+" "+stud1Name);                         //18 rih
+    }
+}
+
+
+
