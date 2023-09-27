@@ -13,3 +13,50 @@ public class myText{
         obj.sleep();
     }
 }
+
+
+
+
+
+
+//2
+package Inheritance;
+
+
+class demo1{
+    int a,b;
+    public demo1(){
+        System.out.println("parent class constructor");
+
+    }
+    public demo1(int x, int y){
+        System.out.println("parametrize parent class const");
+        a=x;
+        b=y;
+    }
+
+}
+class demo2 extends demo1{
+    
+//    public demo2(){
+//        super();
+//        System.out.println("child class constructor");
+//    }
+    public demo2() {
+       
+        super(30,20);
+        System.out.println("child class constructor");
+
+    }
+    
+}
+
+   
+}
+public class myText{
+    public static void main(String[] args) {
+        demo2 obj =new demo2();
+        
+
+    }
+}
